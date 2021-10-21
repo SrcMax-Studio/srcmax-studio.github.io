@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SrcMax Studio</title>
+    <link rel="stylesheet" href="css/font-awesome-4.5.0/css/font-awesome.min.css" tppabs="https://www.mamenp.com/teach/css/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style_wap.css" tppabs="https://www.mamenp.com/teach/css/style_wap.css">
+    <!--分割-->
+    <link rel="stylesheet" type="text/css" href="css/main.css" tppabs="https://www.mamenp.com/teach/css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/process.css" tppabs="https://www.mamenp.com/teach/css/process.css">
+
+    <script type="text/javascript">
+        //设定rem值
+        document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 20 + 'px';
+    </script>
+
+
+    <script src="js/jquery-1.8.3.min.js"></script>
+
+    <style>
+        .d_column table {
+            border-collapse: collapse;
+            width: 100%;
+            border-spacing: 0;
+
+        }
+
+        .d_column th {
+            background: #F0F0F0;
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            text-indent: 0PX;
+            TEXT-ALIGN: CENTER;
+            min-width: 91PX;
+
+        }
+
+        .d_column thead th {
+            background: #F0F0F0;
+        }
+
+        .d_column th,
+        .d_column td {
+            font-style: normal;
+            font-size: 13px;
+            color: #555;
+            font-weight: 400;
+            text-align: left;
+
+        }
+
+        .d_column td {
+            border: 1px solid #CCCCCC;
+            padding: 7px 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="navBox">
+    <h1 onclick="rTop()">SrcMax Studio</h1>
+	<a href="javascript:maoDian('youlian');">About me</a>
+</div>
+<div class="bigBox">
+    <div class="index">
+        <div class="titleBox">SrcMax Studio</div>
+        <br>
+        <div class="aBox">
+            <div class="clearfloat"></div>
+			</div>
+    </div>
+
+    <div class="clearfloat"></div>
+    </div>
+	    <br><br>
+        <div id="youlian"></div>
+        <div class="js_title">About Me</div>
+        <div class="js_sloganBox">SrcMax Studio</div>
+        <div class="js_info">
+            Our mission is to organize the world’s information and make it universally accessible and useful.
+    </div>
+           <br><br>
+
+    <div class="clearfloat"></div>
+
+
+    <div class="clearfloat"></div>
+
+    <div class="hezuohuoban">
+        <div class="js_title">SrcMax Studio welcome you to join us.<br>
+            
+        </div>
+        </a>
+    </div>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+
+    <!--返回顶部代码 start-->
+</div>
+</body>
+
+<script type="text/javascript" src="js/rTop.js" ></script>
+<script>
+    function nr_show(id) {
+        if ($('#' + id).is(":hidden")) {
+            $('#' + id).slideDown(300);
+        } else {
+            $('#' + id).slideUp(300);
+        }
+    }
+
+    $(function () {
+        var windowHeight = $(window).height();
+        var indexHeight = $('.index').height();
+        var windowWidth = $(window).width();
+        // 设置index div margin-top值
+        marginTop = (windowHeight - indexHeight) / 2;
+        $(".titleBox").css("margin-top", marginTop + 40);
+        // 设置介绍div top值
+        if (indexHeight < windowHeight) {
+            $(".jieshao").css("margin-top", windowHeight - indexHeight);
+        }
+        //设置jiangshi div top值
+        var jieshaoHeight = $('.jieshao').height();
+        if (jieshaoHeight < windowHeight) {
+            $(".jiangshi").css("margin-top", windowHeight - jieshaoHeight);
+        }
+        //设置kebiao div top值
+        var jiangshiHeight = $('.jiangshi').height();
+        if (jiangshiHeight < windowHeight) {
+            $(".kebiao").css("margin-top", windowHeight - jiangshiHeight);
+        }
+        //设置guanyuwomen div top值
+        var bk_boxHeight = $('.bk_box').height();
+        if (bk_boxHeight < windowHeight) {
+            $(".guanyuwomen").css("margin-top", windowHeight - bk_boxHeight);
+        }
+
+
+        $(".hezuohuoban").css("margin-top", 30);
+
+        $(".hz_box").css("margin-bottom", windowHeight / 2);
+
+        var m_st, m_po = 1;
+        $(window).scroll(
+            function () {
+                m_st = Math.max(document.body.scrollTop || document.documentElement.scrollTop);
+                if (m_st > m_po) {
+                    // $(".navBox").css({"height":"50px","line-height":"48px"});
+                    // $(".navBox a").css({"height":"30px","line-height":"30px","padding-left":"24px","padding-right":"24px"});
+                    $(".navBox a").css({"padding-left": "15px", "padding-right": "15px"});
+                    $(".navBox").slideDown(400);
+                } else {
+                    $(".navBox").slideUp(400);
+                    // $(".navBox").css({"height":"60px","line-height":"58px"});
+                    // $(".navBox a").css({"height":"40px","line-height":"40px","padding-left":"30px","padding-right":"30px"});
+                }
+            })
+    });
+
+    function rTop() {
+        $('html,body').animate({'scrollTop': 0}, 800);
+    }
+
+    function maoDian(id) {
+        $("html,body").animate({scrollTop: $("#" + id).offset().top}, 500);
+        var num = Math.floor(Math.random() * 4 + 1);
+        // $("body").css("background-image","url(images/pic_"+num+".jpg)");
+    }
+</script>
+
+<!--分割-->
+<script type="text/javascript" src="js/main.js" </script>
+</html>
